@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Full Menu | Cafe Mayfair</title>
+<meta name="description" content="The full menu at Cafe Mayfair, Durban North — breakfast, lunch, sandwiches, salads and vegetarian options.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Caveat:wght@500;600&display=swap">
+<style>
+  :root{
+    --cream:oklch(96.8% .012 88);
+    --card:oklch(98.8% .008 88);
+    --ink:oklch(25.5% .016 62);
+    --teal:oklch(58.5% .056 205);
+    --teal-deep:oklch(40.2% .048 209);
+    --teal-soft:oklch(86% .028 200);
+    --accent:oklch(66.5% .078 66);
+    --sand:oklch(92.5% .019 85);
+    --border:oklch(87.8% .018 80);
+    --muted:oklch(48% .022 66);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'DM Sans', sans-serif; background:var(--cream); color:var(--ink); line-height:1.5;}
+  a{color:inherit; text-decoration:none;}
+  .script{font-family:'Caveat', cursive; font-weight:600;}
+  .label-caps{font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 20px;}
+
+  header{
+    position:sticky; top:0; z-index:30;
+    background:rgba(251,246,236,.92); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  nav{max-width:1152px; margin:0 auto; padding:16px 20px; display:flex; align-items:center; justify-content:space-between;}
+  .logo{display:flex; flex-direction:column; line-height:1;}
+  .logo .script{font-size:1.1rem; color:var(--accent);}
+  .logo .word{font-family:'Quicksand',sans-serif; font-weight:700; font-size:1.5rem; margin-top:-4px;}
+  .back-link{font-size:.9rem; color:var(--teal-deep); font-weight:600;}
+  .back-link:hover{color:var(--teal);}
+
+  .menu-hero{padding:48px 0 24px; text-align:center; border-bottom:1px solid var(--border);}
+  .menu-hero p.label-caps{color:var(--teal-deep); text-align:center;}
+  .menu-hero h1{font-family:'Quicksand',sans-serif; font-weight:700; font-size:2.2rem; margin-top:10px;}
+  .menu-hero p.sub{margin-top:10px; color:var(--muted); font-size:.9rem;}
+
+  .menu-body{padding:48px 0 80px;}
+  .menu-section{margin-bottom:44px;}
+  .menu-section h2{
+    font-family:'Quicksand',sans-serif; font-weight:700; font-size:1.4rem;
+    color:var(--teal-deep); border-bottom:2px solid var(--accent);
+    display:inline-block; padding-bottom:4px; margin-bottom:6px;
+  }
+  .menu-section .note{font-size:.82rem; color:var(--muted); font-style:italic; margin-bottom:16px;}
+  .menu-sub{margin-top:20px; margin-bottom:8px; font-size:.78rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent);}
+  .item{display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px dashed var(--border);}
+  .item:last-child{border-bottom:none;}
+  .item-name{font-weight:600; font-family:'Quicksand',sans-serif;}
+  .item-desc{font-size:.85rem; color:var(--muted); margin-top:2px; line-height:1.45;}
+  .item-price{white-space:nowrap; font-weight:700; color:var(--teal-deep); font-family:'Quicksand',sans-serif;}
+
+  .toastie-table{width:100%; border-collapse:collapse; margin-top:6px;}
+  .toastie-table th{font-size:.7rem; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); text-align:right; padding:6px 8px; font-weight:700;}
+  .toastie-table th:first-child{text-align:left;}
+  .toastie-table td{padding:10px 8px; border-bottom:1px dashed var(--border); font-size:.9rem;}
+  .toastie-table td:not(:first-child){text-align:right; font-weight:600; color:var(--teal-deep); font-family:'Quicksand',sans-serif;}
+  .toastie-table td.desc{color:var(--muted); font-size:.8rem; display:block; font-weight:400;}
+
+  .footer-note{
+    margin-top:56px; padding:24px; background:var(--card); border:1px solid var(--border);
+    border-radius:12px; font-size:.85rem; color:var(--muted); line-height:1.6; text-align:center;
+  }
+  .footer-note strong{color:var(--ink);}
+
+  footer{background:var(--ink); color:rgba(251,246,236,.5); padding:24px 0; text-align:center; font-size:.8rem;}
+
+  @media (min-width:768px){
+    .menu-columns{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">
+      <span class="script">cafe</span>
+      <span class="word">mayfair</span>
+    </a>
+    <a href="index.html" class="back-link">&larr; Back to site</a>
+  </nav>
+</header>
+
+<section class="menu-hero">
+  <div class="wrap">
+    <p class="label-caps">The full spread</p>
+    <h1>Our Menu</h1>
+    <p class="sub">Shop 9, 41-45 Mackeurtan Ave, Durban North &middot; 083 347 7464</p>
+  </div>
+</section>
+
+<section class="menu-body">
+  <div class="wrap">
+
+    <div class="menu-columns">
+      <div>
+        <!-- BREAKFAST -->
+        <div class="menu-section">
+          <h2>Breakfast</h2>
+          <div class="menu-sub">Health</div>
+          <div class="item"><div><div class="item-name">Muesli & Plain Yoghurt</div></div><div class="item-price">R64</div></div>
+          <div class="item"><div><div class="item-name">Fresh Fruit Salad, Muesli & Plain Yoghurt</div></div><div class="item-price">R82</div></div>
+          <div class="item"><div><div class="item-name">Gluten Free Cooked Oats</div><div class="item-desc">With honey & roasted almonds</div></div><div class="item-price">R64</div></div>
+          <div class="item"><div><div class="item-name">Banting Nut & Seed Muesli Granola</div><div class="item-desc">With fresh fruit and plain yoghurt</div></div><div class="item-price">R92</div></div>
+          <div class="item"><div><div class="item-name">Gluten Free Lemon & Coconut Bircher Muesli</div><div class="item-desc">With fresh fruit & almonds</div></div><div class="item-price">R84</div></div>
+          <div class="item"><div><div class="item-name">Toast, Your Choice</div><div class="item-desc">Marmite / Bovril / jams & butters</div></div><div class="item-price">R40</div></div>
+          <div class="item"><div><div class="item-name">Toasted Fruit Bun with Butter</div></div><div class="item-price">R45</div></div>
+
+          <div class="menu-sub">Classic Breakfasts</div>
+          <div class="item"><div><div class="item-name">2 Poached Eggs on Rye Toast</div></div><div class="item-price">R45</div></div>
+          <div class="item"><div><div class="item-name">1 Egg Breakfast</div><div class="item-desc">Bacon and toast</div></div><div class="item-price">R54</div></div>
+          <div class="item"><div><div class="item-name">English Breakfast</div><div class="item-desc">2 eggs, bacon, and toast</div></div><div class="item-price">R64</div></div>
+          <div class="item"><div><div class="item-name">English Sausage Breakfast</div><div class="item-desc">2 eggs, pork sausage, bacon, and toast</div></div><div class="item-price">R90</div></div>
+          <div class="item"><div><div class="item-name">Scrambled Eggs on Rye Toast</div><div class="item-desc">Add bacon +R34</div></div><div class="item-price">R52</div></div>
+          <div class="item"><div><div class="item-name">Two Poached Eggs with Avo, Feta & Crispy Bacon</div><div class="item-desc">On 2 slices rye</div></div><div class="item-price">R105</div></div>
+          <div class="item"><div><div class="item-name">Smoked Salmon Trout & Scrambled Eggs</div><div class="item-desc">On rye with chives, 80g</div></div><div class="item-price">R148</div></div>
+          <div class="item"><div><div class="item-name">French Toast</div><div class="item-desc">With bacon, cheese & honey</div></div><div class="item-price">R92</div></div>
+          <div class="item"><div><div class="item-name">Mayfair Breakfast</div><div class="item-desc">2 eggs, bacon, pork sausage, grilled mushrooms & toast of your choice, with a cappuccino</div></div><div class="item-price">R128</div></div>
+          <div class="item"><div><div class="item-name">Mayfair Benedict</div><div class="item-desc">Two poached eggs on sourdough with bacon, hollandaise & rocket</div></div><div class="item-price">R105</div></div>
+          <div class="item"><div><div class="item-name">Sweet Potato Rostis with Poached Eggs</div><div class="item-desc">Bacon & baby spinach, drizzled with hollandaise</div></div><div class="item-price">R110</div></div>
+          <div class="item"><div><div class="item-name">Chorizo Infused Spicy Beans on Sourdough</div><div class="item-desc">Topped with smashed avo, finished with cream cheese</div></div><div class="item-price">R105</div></div>
+          <div class="item"><div><div class="item-name">Banting Scrambled Eggs</div><div class="item-desc">Feta, mushrooms, crispy bacon and cherry tomatoes</div></div><div class="item-price">R105</div></div>
+        </div>
+
+        <!-- SOMETHING TO SINK YOUR TEETH INTO -->
+        <div class="menu-section">
+          <h2>Something to Sink Your Teeth Into</h2>
+          <div class="item"><div><div class="item-name">Sautéed Peri Peri Chicken Livers</div><div class="item-desc">Crispy bacon bits and your choice of toast</div></div><div class="item-price">R98</div></div>
+          <div class="item"><div><div class="item-name">Durban Style Beef Curry Wrap</div><div class="item-desc">With traditional sides</div></div><div class="item-price">R140</div></div>
+          <div class="item"><div><div class="item-name">Grilled Chicken Fillet Burger</div><div class="item-desc">Served with chips</div></div><div class="item-price">R115</div></div>
+          <div class="item"><div><div class="item-name">Gobstopper Burger</div><div class="item-desc">200g grilled beef burger, avo, bacon & melted cheese, served with chips</div></div><div class="item-price">R155</div></div>
+          <div class="item"><div><div class="item-name">Home-made 200g Grilled Beef Burger</div><div class="item-desc">Served with chips. Toppings: egg +R12, cheese +R20, bacon +R34, chunky peri-peri +R16</div></div><div class="item-price">R125</div></div>
+          <div class="item"><div><div class="item-name">Grilled Marinated Chicken Breast</div><div class="item-desc">With grilled Mediterranean vegetables</div></div><div class="item-price">R148</div></div>
+          <div class="item"><div><div class="item-name">Mayfair Cuban Tramezzini</div><div class="item-desc">Mozzarella, coppa ham, pulled pork, mustard & pickles</div></div><div class="item-price">R152</div></div>
+          <div class="item"><div><div class="item-name">Red Thai Curry Fishcakes</div><div class="item-desc">With Asian dipping sauce</div></div><div class="item-price">R135</div></div>
+        </div>
+
+        <!-- LUNCH & MAINS -->
+        <div class="menu-section">
+          <h2>Lunch & Mains</h2>
+          <div class="item"><div><div class="item-name">Quiche</div><div class="item-desc">3 cheese (feta, cheddar, haloumi), bacon and spinach in a phyllo cup, served fries and salad</div></div><div class="item-price">R135</div></div>
+          <div class="item"><div><div class="item-name">Mexican Burger</div><div class="item-desc">Home-made beef patty topped with sliced avo, spicy beans and a dollop of cream cheese, salad / skinny fries or sweet potato fries</div></div><div class="item-price">R155</div></div>
+          <div class="item"><div><div class="item-name">Chicken Mayo Pesto Open Sandwich</div><div class="item-desc">Creamy chicken mayo on lightly toasted homemade bread with basil pesto and avo, served with sweet potato fries</div></div><div class="item-price">R138</div></div>
+          <div class="item"><div><div class="item-name">The Naked Burger</div><div class="item-desc">Home-made beef patty, sweet potato rosti topped with smashed avo, spicy beans & salsa, salad or sweet potato fries</div></div><div class="item-price">R155</div></div>
+          <div class="item"><div><div class="item-name">Mayfair Buddha Bowl</div><div class="item-desc">Black beans, tomato salsa, brown rice, corn, avo & green salad (add grilled chicken strips +R38)</div></div><div class="item-price">R118</div></div>
+          <div class="item"><div><div class="item-name">Crispy Calamari Salad</div><div class="item-desc">Mixed greens, cucumber, tomato, beetroot, grated carrots, pickled ginger, sesame seeds, crispy calamari, Asian dressing</div></div><div class="item-price">R176</div></div>
+          <div class="item"><div><div class="item-name">Haloumi & Avo Salad</div><div class="item-desc">Mixed greens, cucumber, tomato, red onion, grated carrots & beetroot, haloumi, sesame seeds, feta, avo, ranch dressing on the side</div></div><div class="item-price">R132</div></div>
+          <div class="item"><div><div class="item-name">Bartho's Filleted Fresh Fish</div><div class="item-desc">Creamy lemon or garlic butter sauce, skinny fries & salad</div></div><div class="item-price">R185 / R195</div></div>
+          <div class="item"><div><div class="item-name">Creamy Pesto, Chicken Pasta</div><div class="item-desc">Pasta ribbons, cherry tomatoes, basil pesto, tender chicken breast, rocket, shaved parmesan</div></div><div class="item-price">R145</div></div>
+          <div class="item"><div><div class="item-name">The Brie Burger</div><div class="item-desc">Home-made beef patty topped with avo, brie & crispy bacon bits sauce, salad or sweet potato fries</div></div><div class="item-price">R155</div></div>
+          <div class="item"><div><div class="item-name">Carb Friendly</div><div class="item-desc">Mild Portuguese style chicken strips, peppers and avo, salad, sweet potato fries and dressing on the side</div></div><div class="item-price">R142</div></div>
+          <div class="item"><div><div class="item-name">Banting Steak</div><div class="item-desc">150g flame grilled fillet steak, roasted Mediterranean veg, pesto and rocket</div></div><div class="item-price">R182</div></div>
+          <div class="item"><div><div class="item-name">Chicken Brown Rice Salad</div><div class="item-desc">Grilled chicken breast, brown rice, sundried tomatoes, feta, spring onion, coriander, cucumber and rocket</div></div><div class="item-price">R146</div></div>
+          <div class="item"><div><div class="item-name">Chicken Prego Tramezzini</div><div class="item-desc">Grilled chicken breast, mozzarella, grilled onion, prego sauce, chunky peri-peri, skinny fries or salad</div></div><div class="item-price">R148</div></div>
+          <div class="item"><div><div class="item-name">Italian Twist</div><div class="item-desc">Rigatoni pasta, Italian pork sausage, onion, red pepper, creamy napoli sauce with a touch of chilli, parmesan, shaved almonds, sesame seeds</div></div><div class="item-price">R145</div></div>
+          <div class="item"><div><div class="item-name">Lamb Burger</div><div class="item-desc">Home-made char-grilled lamb burger topped with chunky peri-peri and feta, salad or skinny fries</div></div><div class="item-price">R158</div></div>
+          <div class="item"><div><div class="item-name">Beef Curry and Rice</div><div class="item-desc">Our Durban style beef curry served with basmati rice and traditional sides</div></div><div class="item-price">R148</div></div>
+        </div>
+      </div>
+
+      <div>
+        <!-- TOASTED SANDWICHES -->
+        <div class="menu-section">
+          <h2>Toasted Sandwiches & Panini's</h2>
+          <div class="note">White, brown or rye, served with potato trites or a petit salad</div>
+          <table class="toastie-table">
+            <tr><th>Item</th><th>Toastie</th><th>Panini</th><th>Bagel</th></tr>
+            <tr><td>Poached eggs & grilled bacon</td><td>R82</td><td>R88</td><td>R92</td></tr>
+            <tr><td>Grilled mushrooms, feta & pesto</td><td>R86</td><td>R92</td><td>R96</td></tr>
+            <tr><td>Prosciutto, cheddar & tomato</td><td>R86</td><td>R92</td><td>R96</td></tr>
+            <tr><td>Chicken mayonnaise</td><td>R86</td><td>R92</td><td>R94</td></tr>
+            <tr><td>Mozzarella, tomato & pesto</td><td>R84</td><td>R90</td><td>R94</td></tr>
+            <tr><td>Mayfair club <span class="desc">Grilled chicken breast, bacon, lettuce & tomato</span></td><td>R110</td><td>R116</td><td>R120</td></tr>
+            <tr><td>Chicken mayonnaise & chunky peri-peri</td><td>R88</td><td>R94</td><td>R98</td></tr>
+            <tr><td>Shredded BBQ pork <span class="desc">Topped with coleslaw and rocket</span></td><td>R110</td><td>R116</td><td>R120</td></tr>
+          </table>
+        </div>
+
+        <!-- WRAPS -->
+        <div class="menu-section">
+          <h2>Wraps / Open Sandwiches / Bagels</h2>
+          <div class="note">Sourdough, rye or homemade bread (toasted), served with potato trites or a petit salad &middot; bagel +R12</div>
+          <div class="item"><div><div class="item-name">Creamy Egg Mayonnaise, Crispy Bacon Bits & Rocket</div></div><div class="item-price">R98</div></div>
+          <div class="item"><div><div class="item-name">Chicken Mayonnaise, Bacon & Avocado</div></div><div class="item-price">R112</div></div>
+          <div class="item"><div><div class="item-name">Chicken Mayonnaise with Home-made Hot Chunky Peri-Peri Sauce</div></div><div class="item-price">R100</div></div>
+          <div class="item"><div><div class="item-name">Bacon, Avocado, Feta & Pesto</div></div><div class="item-price">R102</div></div>
+          <div class="item"><div><div class="item-name">Brie, Bacon, Sweet Onion Marmalade & Rocket</div></div><div class="item-price">R122</div></div>
+          <div class="item"><div><div class="item-name">Brie, Rocket, Tomato, Basil & Pine-Nut Dressing</div></div><div class="item-price">R112</div></div>
+          <div class="item"><div><div class="item-name">Mild Portuguese Style Chicken Strips, Onion, Peppers & Avocado</div></div><div class="item-price">R132</div></div>
+          <div class="item"><div><div class="item-name">Smoked Salmon, Cream Cheese, Avo & Chives</div></div><div class="item-price">R150</div></div>
+          <div class="item"><div><div class="item-name">Rare Beef Fillet with Mustard, Caramelized Onions, Rocket & Parmesan</div></div><div class="item-price">R155</div></div>
+          <div class="item"><div><div class="item-name">Grilled Steak with Mushrooms, Onion, Feta & Plum Sauce</div></div><div class="item-price">R125</div></div>
+        </div>
+
+        <!-- SALADS -->
+        <div class="menu-section">
+          <h2>Salads</h2>
+          <div class="note">Our base salad is served with mixed leaves, cherry tomatoes, cucumber, grated carrot & beetroot, with the complimenting dressing mixed into the base</div>
+          <div class="item"><div><div class="item-name">Ed's Salad</div><div class="item-desc">Warm chicken breast, crispy bacon bits, avo, feta, sweet onion confit & croutons</div></div><div class="item-price">R142</div></div>
+          <div class="item"><div><div class="item-name">Mayfair Waldorf</div><div class="item-desc">Blue cheese, roasted pecan praline & apple</div></div><div class="item-price">R124</div></div>
+          <div class="item"><div><div class="item-name">Crispy Bacon Bits, Avocado & Feta</div><div class="item-desc">With sweet onion confit and croutons</div></div><div class="item-price">R124</div></div>
+          <div class="item"><div><div class="item-name">Warm Chicken & Danish Feta Salad</div></div><div class="item-price">R132</div></div>
+          <div class="item"><div><div class="item-name">Roasted Vegetable</div><div class="item-desc">Butternut, feta, olives & mixed toasted seeds</div></div><div class="item-price">R122</div></div>
+          <div class="item"><div><div class="item-name">Rare Sliced Beef Fillet</div><div class="item-desc">'Thai-style' dressing, pickled ginger & toasted sesame seeds</div></div><div class="item-price">R155</div></div>
+          <div class="item"><div><div class="item-name">Shredded Tuna, Peppers & Caramelized Onions</div></div><div class="item-price">R125</div></div>
+          <div class="item"><div><div class="item-name">Chicken Caesar Salad</div><div class="item-desc">Chicken breast, parmesan croutons, crispy bacon bits & poached egg</div></div><div class="item-price">R136</div></div>
+          <div class="item"><div><div class="item-name">Banting Spiced Chicken Breast</div><div class="item-desc">With nuts, roasted cherry tomatoes, artichoke hearts & ranch dressing</div></div><div class="item-price">R136</div></div>
+        </div>
+
+        <!-- VEGETARIAN BREAKFAST -->
+        <div class="menu-section">
+          <h2>Vegetarian Breakfast</h2>
+          <div class="item"><div><div class="item-name">Classic Oats</div><div class="item-desc">In vegan milk with roasted almonds, seasonal fruit and berries</div></div><div class="item-price">R84</div></div>
+          <div class="item"><div><div class="item-name">Black Bean & Salsa Rosti</div><div class="item-desc">Sweet potato rosti topped with black beans & avo with a tomato and jalapeno salsa</div></div><div class="item-price">R90</div></div>
+          <div class="item"><div><div class="item-name">Chef's Breakfast</div><div class="item-desc">Smashed avo on toasted sourdough topped with potato flakes, rocket & a balsamic reduction</div></div><div class="item-price">R96</div></div>
+          <div class="item"><div><div class="item-name">Black Bean & Chickpeas</div><div class="item-desc">BBQ chickpeas & black bean stacked on top of smashed avo & toasted sourdough</div></div><div class="item-price">R98</div></div>
+          <div class="item"><div><div class="item-name">Avo on 2 Toast</div><div class="item-desc">Smashed avo on rye with sesame, pumpkin and sunflower seeds, dried cranberries and micro herbs</div></div><div class="item-price">R82</div></div>
+          <div class="item"><div><div class="item-name">Spicy Beans</div><div class="item-desc">Toasted sourdough topped with smashed avo and our homemade spicy beans, garnished with baby spinach</div></div><div class="item-price">R94</div></div>
+          <div class="item"><div><div class="item-name">Hash Breakfast</div><div class="item-desc">Sautéed potatoes with onions, mushrooms, peppers and charred corn, finished with smashed avo and jalapeno salsa</div></div><div class="item-price">R100</div></div>
+        </div>
+
+        <!-- VEGETARIAN LUNCH -->
+        <div class="menu-section">
+          <h2>Vegetarian Lunch</h2>
+          <div class="item"><div><div class="item-name">Mexican Wrap</div><div class="item-desc">Charred corn, red peppers, onion, bbq black beans, avo, Mexican salsa and vegan mayo, chips or salad</div></div><div class="item-price">R102</div></div>
+          <div class="item"><div><div class="item-name">Bunless Lentil Burger</div><div class="item-desc">Smashed avo, spicy beans & balsamic reduction, chips or side salad</div></div><div class="item-price">R118</div></div>
+          <div class="item"><div><div class="item-name">Mayfair Buddha Bowl</div><div class="item-desc">Black beans, tomato salsa, brown rice, corn, avo & green salad</div></div><div class="item-price">R106</div></div>
+          <div class="item"><div><div class="item-name">Roasted Vegetables Salad</div><div class="item-desc">Our salad base topped with seasonal roasted vegetables, olives & toasted seeds</div></div><div class="item-price">R106</div></div>
+          <div class="item"><div><div class="item-name">BBQ Chickpeas & Cauliflower</div><div class="item-desc">BBQ chickpeas, grilled cauliflower & avo in a whole wheat wrap, chips or side salad</div></div><div class="item-price">R106</div></div>
+          <div class="item"><div><div class="item-name">Spicy Bean Wrap</div><div class="item-desc">Whole wheat wrap filled with spicy mixed beans, avo, beetroot & carrot shavings, chips or side salad</div></div><div class="item-price">R102</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <strong>Please note:</strong> our kitchen uses nuts & nut-based products. Menu items are subject to availability and freshness. All extras selected are subject to additional charges.
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Cafe Mayfair &middot; Durban North &middot; Site by <a href="https://groundsite.github.io/skyline-coffee/#" style="text-decoration:underline;">Groundsite</a>
+</footer>
+
+</body>
+</html>
