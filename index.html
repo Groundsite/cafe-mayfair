@@ -59,6 +59,31 @@
   .call-btn:hover{background:var(--teal);}
   @media (max-width:640px){ .nav-links a.nav-item{display:none;} }
 
+  /* MOBILE NAV */
+  .hamburger{
+    display:none; flex-direction:column; justify-content:center; gap:5px;
+    width:40px; height:40px; background:none; border:none; cursor:pointer;
+    padding:0;
+  }
+  .hamburger span{width:24px; height:2px; background:var(--ink); border-radius:2px; transition:transform .25s, opacity .25s;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-menu{
+    display:none; flex-direction:column;
+    max-height:0; overflow:hidden;
+    background:var(--cream); border-top:1px solid var(--border);
+    transition:max-height .3s ease;
+  }
+  .mobile-menu.open{max-height:300px;}
+  .mobile-menu-item{padding:16px 20px; font-size:.95rem; color:var(--ink); border-bottom:1px solid var(--border);}
+  .mobile-menu-item.call{color:var(--teal-deep); font-weight:700;}
+  @media (max-width:640px){
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+    .mobile-menu{display:flex;}
+  }
+
   /* HERO */
   .hero{position:relative; overflow:hidden;}
   .hero img{width:100%; height:52vh; min-height:320px; object-fit:cover; object-position:center;}
@@ -227,15 +252,27 @@
       <a href="#reviews" class="nav-item">Reviews</a>
       <a href="#visit" class="nav-item">Visit</a>
       <!-- CLIENT: phone number -->
-      <a href="tel:+27833477464" class="call-btn">083 347 7464</a>
+      <a href="tel:+27833477464" class="call-btn">Call us</a>
     </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#menu" class="mobile-menu-item">The plates</a>
+    <a href="#reviews" class="mobile-menu-item">Reviews</a>
+    <a href="#visit" class="mobile-menu-item">Visit</a>
+    <a href="tel:+27833477464" class="mobile-menu-item call">Call us</a>
+  </div>
 </header>
 
 <!-- HERO -->
 <section id="top" class="hero">
   <!-- CLIENT: hero image -->
-  <img src="images/hero.jpg" alt="Cafe Mayfair timber signage against a clear Durban sky">
+  <picture>
+    <source media="(max-width:767px)" srcset="images/hero-mobile.jpg">
+    <img src="images/hero.jpg" alt="Cafe Mayfair storefront and signage">
+  </picture>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-inner">
@@ -270,7 +307,7 @@
     </div>
     <div>
       <p class="label-caps" style="color:var(--teal-deep);">Good to know</p>
-      <p class="body muted">Open from 6:30 am, every single day · Walk-ins welcome · Kitchen open all day</p>
+      <p class="body muted">R100–200 a head · walk-ins welcome · kitchen open all day</p>
     </div>
   </div>
 </section>
@@ -416,6 +453,21 @@
 </footer>
 
 <script>
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  hamburgerBtn.addEventListener('click', function(){
+    var isOpen = mobileMenu.classList.toggle('open');
+    hamburgerBtn.classList.toggle('open', isOpen);
+    hamburgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      mobileMenu.classList.remove('open');
+      hamburgerBtn.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
   function scrollReviews(dir){
     var track = document.getElementById('reviewsTrack');
     var card = track.querySelector('.review-card');
